@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account List</title>
+</head>
+<body>
+    <h1>All Accounts</h1>
+
+    <!-- Display the list of accounts -->
+    <ul>
+        {% for account in accounts %}
+            <li>{{ account.name }} - {{ account.description }}</li>
+        {% empty %}
+            <li>No accounts found.</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'account-create' %}">Add a New Account</a>
+</body>
+</html>
